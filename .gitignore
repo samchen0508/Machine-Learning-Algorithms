@@ -60,3 +60,4 @@
 exp/
 summary/
 __pycache__/
+.DS_Store
