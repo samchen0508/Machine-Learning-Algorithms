@@ -1,4 +1,4 @@
-from hw4code.DataPoints import DataPoints
+from DataPoints import DataPoints
 import random
 import sys
 import math

@@ -55,12 +55,12 @@ class DataPoints:
     # write clusting results into .csv file
     @staticmethod
     def writeToFile(noise, clusters, fileName):
-        # write clusters to file for plotting
-        f = open(fileName, 'w')
-        for pt in noise:
-            f.write(str(pt.x) + "," + str(pt.y) + ",0" + "\n")
-        for w in range(len(clusters)):
-            print("Cluster " + str(w) + " size :" + str(len(clusters[w])))
-            for point in clusters[w]:
-                f.write(str(point.x) + "," + str(point.y) + "," + str((w + 1)) + "\n")
-        f.close()
+        # Write clusters to a file for plotting
+        with open(fileName, 'w') as f:
+            for pt in noise:
+                f.write(str(pt.x) + "," + str(pt.y) + ",-1\n")
+            for w in range(len(clusters)):
+                print("Cluster " + str(w) + " size: " + str(len(clusters[w])))
+                for point in clusters[w]:
+                    f.write(str(point.x) + "," + str(point.y) + "," + str(w) + "\n")
+

@@ -1,5 +1,5 @@
-from hw4code.KMeans import KMeans,compute_purity,compute_NMI,getEuclideanDist
-from hw4code.DataPoints import DataPoints
+from KMeans import KMeans,compute_purity,compute_NMI,getEuclideanDist
+from DataPoints import DataPoints
 import random
 
 
@@ -19,7 +19,7 @@ class DBSCAN:
         random.Random(seed).shuffle(self.dataSet)
         self.noOfLabels = DataPoints.getNoOFLabels(self.dataSet)
         self.e = self.getEpsilon(self.dataSet)
-        print("Esp :" + str(self.e))
+        print("Epsilon:" + str(self.e))
         self.dbscan(self.dataSet)
 
 
@@ -116,8 +116,8 @@ class DBSCAN:
         print("Number of clusters formed :" + str(len(clusters)))
         print("Noise points :" + str(len(noise)))
         
-        print("Noise: ", noise)
-        print("Clusters", clusters)
+        # print("Noise: ", noise)
+        # print("Clusters", clusters)
 
         # Calculate purity
         compute_purity(clusters,len(self.dataSet))
