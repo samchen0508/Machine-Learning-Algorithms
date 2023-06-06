@@ -115,6 +115,9 @@ class DBSCAN:
         # List clusters
         print("Number of clusters formed :" + str(len(clusters)))
         print("Noise points :" + str(len(noise)))
+        
+        print("Noise: ", noise)
+        print("Clusters", clusters)
 
         # Calculate purity
         compute_purity(clusters,len(self.dataSet))
